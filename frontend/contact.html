@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ACGS Stage Crew</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>ACGS Stage Crew</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="activities.html" class="nav-link">Activities</a>
+                <a href="productions.html" class="nav-link">Productions</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="join.html" class="nav-link">Join Us</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with the Stage Crew team. Whether you have questions about joining, need technical support, or want to learn more about our programs, we're here to help.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>We'd love to hear from you! Reach out with any questions, suggestions, or if you'd like to visit our facilities.</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p>stagecrew@churchie.qld.edu.au</p>
+                                <small>We typically respond within 24 hours</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <p>(07) 3896 2200</p>
+                                <small>Monday to Friday, 8:00 AM - 4:00 PM</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Location</h3>
+                                <p>Anglican Church Grammar School<br>
+                                Oaklands Parade<br>
+                                East Brisbane QLD 4169</p>
+                                <small>Drama Centre & Workshop Facilities</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Office Hours</h3>
+                                <p>Monday - Friday: 8:00 AM - 5:00 PM<br>
+                                Saturday: 9:00 AM - 3:00 PM<br>
+                                Sunday: By appointment only</p>
+                                <small>Extended hours during production weeks</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-contact">
+                        <h3>Follow Us</h3>
+                        <div class="social-links-large">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <form id="contact-form" class="contact-form">
+                        <h2>Send Us a Message</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">Name *</label>
+                                <input type="text" id="contact-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email *</label>
+                                <input type="email" id="contact-email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-phone">Phone</label>
+                                <input type="tel" id="contact-phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-type">Inquiry Type *</label>
+                                <select id="contact-type" name="type" required>
+                                    <option value="">Select inquiry type</option>
+                                    <option value="membership">Membership Information</option>
+                                    <option value="technical">Technical Questions</option>
+                                    <option value="productions">Production Inquiries</option>
+                                    <option value="equipment">Equipment/Facilities</option>
+                                    <option value="partnership">Partnership Opportunities</option>
+                                    <option value="general">General Information</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-subject">Subject *</label>
+                            <input type="text" id="contact-subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message">Message *</label>
+                            <textarea id="contact-message" name="message" rows="6" placeholder="Please provide details about your inquiry..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="newsletter" value="yes">
+                                <span class="checkmark"></span>
+                                I'd like to receive updates about Stage Crew activities and events
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c3e50;">Key Contacts</h2>
+            <div class="staff-contacts">
+                <div class="staff-card">
+                    <div class="staff-photo">
+                        <div class="placeholder-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="staff-info">
+                        <h3>Mr. James Mitchell</h3>
+                        <p class="staff-role">Head of Stage Crew</p>
+                        <div class="staff-contact-details">
+                            <p><i class="fas fa-envelope"></i> j.mitchell@churchie.qld.edu.au</p>
+                            <p><i class="fas fa-phone"></i> Ext. 2045</p>
+                        </div>
+                        <p class="staff-description">Overall program coordination, lighting design expertise, and student mentorship.</p>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-photo">
+                        <div class="placeholder-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="staff-info">
+                        <h3>Ms. Sarah Chen</h3>
+                        <p class="staff-role">Sound Engineer Coordinator</p>
+                        <div class="staff-contact-details">
+                            <p><i class="fas fa-envelope"></i> s.chen@churchie.qld.edu.au</p>
+                            <p><i class="fas fa-phone"></i> Ext. 2047</p>
+                        </div>
+                        <p class="staff-description">Sound engineering training, audio system management, and technical support.</p>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-photo">
+                        <div class="placeholder-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="staff-info">
+                        <h3>Mr. David Thompson</h3>
+                        <p class="staff-role">Set Design Instructor</p>
+                        <div class="staff-contact-details">
+                            <p><i class="fas fa-envelope"></i> d.thompson@churchie.qld.edu.au</p>
+                            <p><i class="fas fa-phone"></i> Ext. 2049</p>
+                        </div>
+                        <p class="staff-description">Set construction, workshop safety, and design project coordination.</p>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-photo">
+                        <div class="placeholder-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="staff-info">
+                        <h3>Ms. Emma Rodriguez</h3>
+                        <p class="staff-role">Video Production Specialist</p>
+                        <div class="staff-contact-details">
+                            <p><i class="fas fa-envelope"></i> e.rodriguez@churchie.qld.edu.au</p>
+                            <p><i class="fas fa-phone"></i> Ext. 2051</p>
+                        </div>
+                        <p class="staff-description">Video production training, live streaming coordination, and multimedia projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c3e50;">Visit Our Facilities</h2>
+            <div class="facilities-info">
+                <div class="facility-description">
+                    <h3>Our State-of-the-Art Facilities</h3>
+                    <p>Stage Crew operates from multiple purpose-built facilities across the ACGS campus, each designed to provide students with professional-grade training environments.</p>
+                    
+                    <div class="facility-list">
+                        <div class="facility-item">
+                            <div class="facility-icon">
+                                <i class="fas fa-theater-masks"></i>
+                            </div>
+                            <div class="facility-details">
+                                <h4>Main Theatre</h4>
+                                <p>400-seat auditorium with professional lighting rig, sound system, and projection capabilities.</p>
+                            </div>
+                        </div>
+
+                        <div class="facility-item">
+                            <div class="facility-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="facility-details">
+                                <h4>Workshop Facility</h4>
+                                <p>Fully equipped woodworking and metalworking shop for set construction and prop building.</p>
+                            </div>
+                        </div>
+
+                        <div class="facility-item">
+                            <div class="facility-icon">
+                                <i class="fas fa-microphone"></i>
+                            </div>
+                            <div class="facility-details">
+                                <h4>Audio Control Room</h4>
+                                <p>Professional-grade mixing console and recording equipment for sound engineering training.</p>
+                            </div>
+                        </div>
+
+                        <div class="facility-item">
+                            <div class="facility-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="facility-details">
+                                <h4>Media Production Suite</h4>
+                                <p>Video editing stations, camera equipment, and live streaming setup for multimedia projects.</p>
+                            </div>
+                        </div>
+
+                        <div class="facility-item">
+                            <div class="facility-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="facility-details">
+                                <h4>Costume & Design Room</h4>
+                                <p>Dedicated space for costume creation, makeup application, and design work.</p>
+                            </div>
+                        </div>
+
+                        <div class="facility-item">
+                            <div class="facility-icon">
+                                <i class="fas fa-warehouse"></i>
+                            </div>
+                            <div class="facility-details">
+                                <h4>Equipment Storage</h4>
+                                <p>Climate-controlled storage for lighting equipment, sound gear, and production materials.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="visit-info">
+                        <h4>Schedule a Visit</h4>
+                        <p>Interested in seeing our facilities? We offer guided tours for prospective members and their families. Tours typically last 45 minutes and include demonstrations of our equipment and current projects.</p>
+                        <p><strong>Tour Times:</strong> Wednesdays at 3:30 PM and Saturdays at 10:00 AM</p>
+                        <p><strong>Booking:</strong> Contact us at least 48 hours in advance to arrange your visit.</p>
+                        <a href="#contact-form" class="btn btn-primary">Book a Tour</a>
+                    </div>
+                </div>
+
+                <div class="map-placeholder">
+                    <div class="map-container">
+                        <div class="map-overlay">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Anglican Church Grammar School</h3>
+                            <p>Oaklands Parade, East Brisbane QLD 4169</p>
+                            <div class="map-directions">
+                                <h4>Getting Here:</h4>
+                                <ul>
+                                    <li><strong>By Car:</strong> Visitor parking available on Oaklands Parade</li>
+                                    <li><strong>By Train:</strong> Murrarie Station (15-minute walk)</li>
+                                    <li><strong>By Bus:</strong> Routes 230, 235 stop nearby</li>
+                                    <li><strong>By Ferry:</strong> Holman Street Terminal (10-minute walk)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c3e50;">Frequently Asked Questions</h2>
+            <div class="contact-faq">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What's the best way to get information about joining Stage Crew?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The best way is to attend one of our monthly information sessions or contact Mr. Mitchell directly via email. We also encourage prospective members to visit our facilities during training times to see Stage Crew in action.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How quickly can I expect a response to my inquiry?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We aim to respond to all inquiries within 24 hours during the school term. During school holidays, responses may take 2-3 business days. For urgent matters, please call the main school number.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can parents/guardians visit the facilities?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We welcome parent visits and offer regular open days. Parents can schedule tours to see our facilities and meet our staff. We believe parent involvement and understanding is important for student success.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer technical support for other school events?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Stage Crew provides technical support for many school events beyond drama productions, including assemblies, concerts, sports presentations, and special ceremonies. Contact us to discuss your event's technical needs.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How can external organizations partner with Stage Crew?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We're always interested in partnership opportunities that benefit our students' learning. This includes guest workshops, equipment demonstrations, work experience placements, and collaborative projects. Please reach out to discuss potential partnerships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ACGS Stage Crew</h3>
+                    <p>Empowering students through technical theatre and production skills.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="activities.html">Activities</a></li>
+                        <li><a href="join.html">Join Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> stagecrew@churchie.qld.edu.au</li>
+                        <li><i class="fas fa-phone"></i> (07) 3896 2200</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Oaklands Parade, East Brisbane</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anglican Church Grammar School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Contact form FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.contact-faq .faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    faqItems.forEach(faq => {
+                        faq.classList.remove('active');
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            // Smooth scroll to contact form when "Book a Tour" is clicked
+            const bookTourBtn = document.querySelector('a[href="#contact-form"]');
+            if (bookTourBtn) {
+                bookTourBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const contactForm = document.getElementById('contact-form');
+                    contactForm.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Pre-populate the inquiry type
+                    const inquiryType = document.getElementById('contact-type');
+                    const subjectField = document.getElementById('contact-subject');
+                    if (inquiryType && subjectField) {
+                        inquiryType.value = 'general';
+                        subjectField.value = 'Facility Tour Request';
+                    }
+                });
+            }
+        });
+    </script>
+
+    <style>
+        /* Additional styles for Contact page */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .contact-info > p {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .contact-methods {
+            margin-bottom: 3rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-details p {
+            color: #333;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+
+        .contact-details small {
+            color: #666;
+            font-style: italic;
+        }
+
+        .social-contact {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .social-contact h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links-large {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .social-link i {
+            font-size: 1.2rem;
+        }
+
+        .contact-form-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h2 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .staff-contacts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .staff-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .staff-photo {
+            margin-bottom: 1.5rem;
+        }
+
+        .staff-photo .placeholder-photo {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .staff-info h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .staff-role {
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .staff-contact-details {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .staff-contact-details p {
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .staff-contact-details i {
+            color: #3498db;
+            width: 15px;
+        }
+
+        .staff-description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .facilities-info {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .facility-description h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .facility-description > p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .facility-list {
+            margin-bottom: 3rem;
+        }
+
+        .facility-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .facility-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .facility-details h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .facility-details p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .visit-info {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .visit-info h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .visit-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .map-container {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            height: 400px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 90%;
+        }
+
+        .map-overlay i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+
+        .map-overlay h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .map-overlay > p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .map-directions {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .map-directions h4 {
+            color: white;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .map-directions ul {
+            list-style: none;
+        }
+
+        .map-directions ul li {
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .contact-faq {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .facilities-info {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .social-links-large {
+                grid-template-columns: 1fr;
+            }
+
+            .staff-contacts {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-method {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+
+            .map-directions {
+                text-align: center;
+            }
+        }
+    </style>
+</body>
+</html>

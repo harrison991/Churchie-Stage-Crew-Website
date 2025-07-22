@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage Crew Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .admin-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: linear-gradient(180deg, #1e293b 0%, #334155 100%);
+            color: white;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.collapsed {
+            transform: translateX(-100%);
+        }
+
+        .sidebar-header {
+            padding: 2rem 1.5rem;
+            border-bottom: 1px solid #475569;
+        }
+
+        .sidebar-header h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-header p {
+            font-size: 0.875rem;
+            color: #cbd5e1;
+        }
+
+        .sidebar-nav {
+            padding: 1rem 0;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background-color: #3730a3;
+            color: white;
+        }
+
+        .nav-item i {
+            margin-right: 0.75rem;
+            width: 1.25rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main-content.expanded {
+            margin-left: 0;
+        }
+
+        /* Header */
+        .admin-header {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .page-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #f1f5f9;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #3730a3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Content Area */
+        .content-area {
+            padding: 2rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #3730a3;
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        .stat-card i {
+            float: right;
+            font-size: 2rem;
+            color: #3730a3;
+            opacity: 0.7;
+        }
+
+        /* Tables */
+        .data-table {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .table-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: between;
+            align-items: center;
+        }
+
+        .table-header h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .table-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 0.5rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+        }
+
+        .filter-select {
+            padding: 0.5rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            background: white;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            border: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #3730a3;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #312e81;
+        }
+
+        .btn-secondary {
+            background: #6b7280;
+            color: white;
+        }
+
+        .btn-success {
+            background: #059669;
+            color: white;
+        }
+
+        .btn-danger {
+            background: #dc2626;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 0.75rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.875rem;
+        }
+
+        tr:hover {
+            background: #f8fafc;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .status-pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-approved {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-rejected {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-reviewed {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #3730a3;
+            box-shadow: 0 0 0 3px rgba(55, 48, 163, 0.1);
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .modal-header h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6b7280;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 2rem;
+        }
+
+        /* Loading */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .spinner {
+            width: 32px;
+            height: 32px;
+            border: 3px solid #e2e8f0;
+            border-top: 3px solid #3730a3;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.show {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .content-area {
+                padding: 1rem;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .table-header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+
+            .table-controls {
+                flex-direction: column;
+            }
+
+            th, td {
+                padding: 0.5rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Hide certain sections initially */
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Alert messages */
+        .alert {
+            padding: 1rem;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+        }
+
+        .alert-success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+
+        .alert-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+
+        .alert-info {
+            background: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #93c5fd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-container">
+        <div class="login-form">
+            <div class="login-header">
+                <h2>Stage Crew Admin</h2>
+                <p>Sign in to access the dashboard</p>
+            </div>
+            <div id="firebase-auth-container"></div>
+            <div id="login-error" class="alert alert-error" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="admin-dashboard" class="admin-container" style="display: none;">
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Stage Crew Admin</h2>
+                <p>Content Management</p>
+            </div>
+            <div class="sidebar-nav">
+                <button class="nav-item active" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i> Dashboard
+                </button>
+                <button class="nav-item" data-section="content">
+                    <i class="fas fa-edit"></i> Content Management
+                </button>
+                <button class="nav-item" data-section="applications">
+                    <i class="fas fa-file-alt"></i> Applications
+                </button>
+                <button class="nav-item" data-section="contacts">
+                    <i class="fas fa-envelope"></i> Contact Messages
+                </button>
+                <button class="nav-item" data-section="admins">
+                    <i class="fas fa-users-cog"></i> Admin Management
+                </button>
+                <button class="nav-item" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content" id="main-content">
+            <!-- Header -->
+            <header class="admin-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title" id="page-title">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-menu">
+                        <div class="user-avatar" id="user-avatar">A</div>
+                        <span id="user-name">Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Dashboard Section -->
+                <section id="dashboard-section" class="content-section active">
+                    <div class="dashboard-grid">
+                        <div class="stat-card">
+                            <i class="fas fa-file-alt"></i>
+                            <h3 id="total-applications">-</h3>
+                            <p>Total Applications</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-clock"></i>
+                            <h3 id="pending-applications">-</h3>
+                            <p>Pending Applications</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-envelope"></i>
+                            <h3 id="total-contacts">-</h3>
+                            <p>Contact Messages</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-users"></i>
+                            <h3 id="active-members">150</h3>
+                            <p>Active Members</p>
+                        </div>
+                    </div>
+
+                    <div class="data-table">
+                        <div class="table-header">
+                            <h3>Recent Applications</h3>
+                            <button class="btn btn-primary" onclick="showSection('applications')">
+                                View All Applications
+                            </button>
+                        </div>
+                        <div id="recent-applications-table">
+                            <div class="loading">
+                                <div class="spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Content Management Section -->
+                <section id="content-section" class="content-section">
+                    <div class="data-table">
+                        <div class="table-header">
+                            <h3>Content Management</h3>
+                            <div class="table-controls">
+                                <select id="content-page-select" class="filter-select">
+                                    <option value="home">Home Page</option>
+                                    <option value="about">About Page</option>
+                                </select>
+                                <button class="btn btn-primary" onclick="editContent()">
+                                    <i class="fas fa-edit"></i> Edit Content
+                                </button>
+                            </div>
+                        </div>
+                        <div id="content-preview">
+                            <div class="loading">
+                                <div class="spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Applications Section -->
+                <section id="applications-section" class="content-section">
+                    <div class="data-table">
+                        <div class="table-header">
+                            <h3>Member Applications</h3>
+                            <div class="table-controls">
+                                <input type="text" id="application-search" class="search-input" placeholder="Search applications...">
+                                <select id="application-status-filter" class="filter-select">
+                                    <option value="">All Status</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="approved">Approved</option>
+                                    <option value="rejected">Rejected</option>
+                                    <option value="reviewed">Reviewed</option>
+                                </select>
+                                <button class="btn btn-primary" onclick="refreshApplications()">
+                                    <i class="fas fa-sync"></i> Refresh
+                                </button>
+                            </div>
+                        </div>
+                        <div id="applications-table">
+                            <div class="loading">
+                                <div class="spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contacts Section -->
+                <section id="contacts-section" class="content-section">
+                    <div class="data-table">
+                        <div class="table-header">
+                            <h3>Contact Messages</h3>
+                            <div class="table-controls">
+                                <input type="text" id="contact-search" class="search-input" placeholder="Search messages...">
+                                <select id="contact-status-filter" class="filter-select">
+                                    <option value="">All Status</option>
+                                    <option value="new">New</option>
+                                    <option value="replied">Replied</option>
+                                    <option value="resolved">Resolved</option>
+                                </select>
+                                <button class="btn btn-primary" onclick="refreshContacts()">
+                                    <i class="fas fa-sync"></i> Refresh
+                                </button>
+                            </div>
+                        </div>
+                        <div id="contacts-table">
+                            <div class="loading">
+                                <div class="spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Admin Management Section -->
+                <section id="admins-section" class="content-section">
+                    <div class="data-table">
+                        <div class="table-header">
+                            <h3>Admin Management</h3>
+                            <button class="btn btn-primary" onclick="showAddAdminModal()">
+                                <i class="fas fa-plus"></i> Add Admin
+                            </button>
+                        </div>
+                        <div id="admins-table">
+                            <div class="loading">
+                                <div class="spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <!-- Application Detail Modal -->
+    <div id="application-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Application Details</h3>
+                <button class="close-modal" onclick="closeModal('application-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="application-details">
+                <!-- Application details will be loaded here -->
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-success" onclick="updateApplicationStatus('approved')">
+                    <i class="fas fa-check"></i> Approve
+                </button>
+                <button class="btn btn-danger" onclick="updateApplicationStatus('rejected')">
+                    <i class="fas fa-times"></i> Reject
+                </button>
+                <button class="btn btn-secondary" onclick="closeModal('application-modal')">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Edit Modal -->
+    <div id="content-modal" class="modal">
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h3>Edit Content</h3>
+                <button class="close-modal" onclick="closeModal('content-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="content-editor">
+                <!-- Content editor will be loaded here -->
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-primary" onclick="saveContent()">
+                    <i class="fas fa-save"></i> Save Changes
+                </button>
+                <button class="btn btn-secondary" onclick="closeModal('content-modal')">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Admin Modal -->
+    <div id="add-admin-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Admin</h3>
+                <button class="close-modal" onclick="closeModal('add-admin-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="add-admin-form">
+                <div class="form-group">
+                    <label for="admin-name">Name</label>
+                    <input type="text" id="admin-name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-email">Email</label>
+                    <input type="email" id="admin-email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-firebase-uid">Firebase UID</label>
+                    <input type="text" id="admin-firebase-uid" class="form-input" required>
+                    <small>Firebase User ID from Firebase Auth</small>
+                </div>
+                <div class="form-group">
+                    <label for="admin-role">Role</label>
+                    <select id="admin-role" class="form-input">
+                        <option value="admin">Admin</option>
+                        <option value="super_admin">Super Admin</option>
+                    </select>
+                </div>
+            </form>
+            <div class="modal-actions">
+                <button class="btn btn-primary" onclick="addAdmin()">
+                    <i class="fas fa-plus"></i> Add Admin
+                </button>
+                <button class="btn btn-secondary" onclick="closeModal('add-admin-modal')">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    
+    <!-- Firebase UI -->
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+
+    <!-- Admin Dashboard JavaScript -->
+    <script src="admin-dashboard.js"></script>
+
+    <style>
+        /* Login Screen Styles */
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem;
+        }
+
+        .login-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-header p {
+            color: #64748b;
+        }
+
+        #firebase-auth-container {
+            margin-bottom: 1rem;
+        }
+
+        /* Firebase UI customization will be done in JavaScript */
+    </style>
+</body>
+</html>

@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productions - ACGS Stage Crew</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>ACGS Stage Crew</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="activities.html" class="nav-link">Activities</a>
+                <a href="productions.html" class="nav-link active">Productions</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="join.html" class="nav-link">Join Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Productions</h1>
+            <p>Explore the impressive range of productions, events, and performances that our Stage Crew team has supported throughout the years.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="production-filters">
+                <button class="filter-btn active" data-filter="all">All Productions</button>
+                <button class="filter-btn" data-filter="musicals">Musicals</button>
+                <button class="filter-btn" data-filter="plays">Plays</button>
+                <button class="filter-btn" data-filter="concerts">Concerts</button>
+                <button class="filter-btn" data-filter="events">Special Events</button>
+            </div>
+
+            <div class="productions-grid" id="productions-grid">
+                <!-- Featured Current Production -->
+                <div class="production-card featured" data-category="musicals">
+                    <div class="production-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-theater-masks"></i>
+                        </div>
+                        <div class="production-status current">Currently Running</div>
+                    </div>
+                    <div class="production-content">
+                        <h3>Les Misérables</h3>
+                        <p class="production-year">2025</p>
+                        <p class="production-description">Our most ambitious production yet, featuring a full orchestra pit, complex lighting sequences, and revolutionary set design with automated scenic elements.</p>
+                        <div class="production-stats">
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>45 Crew Members</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-calendar"></i>
+                                <span>15 Performances</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>200+ Light Fixtures</span>
+                            </div>
+                        </div>
+                        <div class="production-tech">
+                            <span class="tech-tag">Moving Lights</span>
+                            <span class="tech-tag">Live Orchestra</span>
+                            <span class="tech-tag">Automated Sets</span>
+                            <span class="tech-tag">Projection Mapping</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024 Productions -->
+                <div class="production-card" data-category="musicals">
+                    <div class="production-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-music"></i>
+                        </div>
+                    </div>
+                    <div class="production-content">
+                        <h3>Mamma Mia!</h3>
+                        <p class="production-year">2024</p>
+                        <p class="production-description">A vibrant musical featuring dynamic lighting design, beach-themed sets, and a complex sound setup for the live band.</p>
+                        <div class="production-tech">
+                            <span class="tech-tag">LED Wall</span>
+                            <span class="tech-tag">Wireless Mics</span>
+                            <span class="tech-tag">Haze Effects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="production-card" data-category="plays">
+                    <div class="production-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-masks-theater"></i>
+                        </div>
+                    </div>
+                    <div class="production-content">
+                        <h3>Romeo and Juliet</h3>
+                        <p class="production-year">2024</p>
+                        <p class="production-description">Classic Shakespearean drama with intimate lighting design and Renaissance-inspired set construction.</p>
+                        <div class="production-tech">
+                            <span class="tech-tag">Period Sets</span>
+                            <span class="tech-tag">Classical Lighting</span>
+                            <span class="tech-tag">Sound Effects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="production-card" data-category="concerts">
+                    <div class="production-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                    </div>
+                    <div class="production-content">
+                        <h3>Spring Music Festival</h3>
+                        <p class="production-year">2024</p>
+                        <p class="production-description">Multi-genre concert featuring jazz band, choir, and contemporary music groups with professional concert lighting.</p>
+                        <div class="production-tech">
+                            <span class="tech-tag">Concert Lighting</span>
+                            <span class="tech-tag">Multi-band Setup</span>
+                            <span class="tech-tag">Live Recording</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="production-card" data-category="events">
+                    <div class="production-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                    </div>
+                    <div class="production-content">
+                        <h3>Speech Night 2024</h3>
+                        <p class="production-year">2024</p>
+                        <p class="production-description">Formal awards ceremony requiring elegant lighting design, multi-camera video production, and livestreaming capabilities.</p>
+                        <div class="production-tech">
+                            <span class="tech-tag">Live Streaming</span>
+                            <span class="tech-tag">Multi-Camera</span>
+                            <span class="tech-tag">Corporate A/V</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 Productions -->
+                <div class="production-card" data-category="musicals">
+                    <div class="production-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="production-content">
+                        <h3>The Lion King Jr.</h3>
+                        <p class="production-year">2023</p>
+                        <p class="production-description">Spectacular production featuring elaborate costumes, African-inspired set design, and innovative puppet integration.</p>
+                        <div class="production-tech">
+                            <span class="tech-tag">Puppet Theatre</span>
+                            <span class="tech-tag">Themed Sets</span>
+                            <span class="tech-tag">Color Mixing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="production-card" data-category="plays">
+                    <div class="production-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-book"></i>
+                        </div>
+                    </div>
+                    <div class="production-content">
+                        <h3>The Crucible</h3>
+                        <p class="production-year">2023</p>
+                        <p class="production-description">Intense drama requiring minimal but powerful set design and atmospheric lighting to enhance the psychological tension.</p>
+                        <div class="production-tech">
+                            <span class="tech-tag">Atmospheric Effects</span>
+                            <span class="tech-tag">Minimalist Design</span>
+                            <span class="tech-tag">Sound Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="production-card" data-category="concerts">
+                    <div class="production-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-guitar"></i>
+                        </div>
+                    </div>
+                    <div class="production-content">
+                        <h3>Battle of the Bands</h3>
+                        <p class="production-year">2023</p>
+                        <p class="production-description">High-energy student competition featuring rock concert lighting, professional sound mixing, and live audience voting systems.</p>
+                        <div class="production-tech">
+                            <span class="tech-tag">Rock Lighting</span>
+                            <span class="tech-tag">Competition Setup</span>
+                            <span class="tech-tag">Audience Response</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2022 Productions -->
+                <div class="production-card" data-category="musicals">
+                    <div class="production-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="production-content">
+                        <h3>Grease</h3>
+                        <p class="production-year">2022</p>
+                        <p class="production-description">Our breakthrough production that established Stage Crew as a major force, featuring 1950s-themed sets and classic musical theatre lighting.</p>
+                        <div class="production-tech">
+                            <span class="tech-tag">Period Design</span>
+                            <span class="tech-tag">Car Props</span>
+                            <span class="tech-tag">Musical Theatre</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="production-card" data-category="events">
+                    <div class="production-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                    </div>
+                    <div class="production-content">
+                        <h3>Christmas Concert</h3>
+                        <p class="production-year">2022</p>
+                        <p class="production-description">Festive celebration combining traditional carols with contemporary arrangements, featuring winter wonderland set design.</p>
+                        <div class="production-tech">
+                            <span class="tech-tag">Seasonal Design</span>
+                            <span class="tech-tag">Snow Effects</span>
+                            <span class="tech-tag">Carol Lighting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Productions -->
+                <div class="production-card" data-category="events">
+                    <div class="production-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                    </div>
+                    <div class="production-content">
+                        <h3>Community Theatre Support</h3>
+                        <p class="production-year">Ongoing</p>
+                        <p class="production-description">Regular support for local theatre groups, providing technical expertise and equipment for community productions.</p>
+                        <div class="production-tech">
+                            <span class="tech-tag">Community Outreach</span>
+                            <span class="tech-tag">Technical Support</span>
+                            <span class="tech-tag">Equipment Hire</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="production-card" data-category="events">
+                    <div class="production-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                    </div>
+                    <div class="production-content">
+                        <h3>Virtual Productions</h3>
+                        <p class="production-year">2020-2021</p>
+                        <p class="production-description">Pioneered virtual theatre during COVID-19, developing livestreaming capabilities and remote production techniques.</p>
+                        <div class="production-tech">
+                            <span class="tech-tag">Virtual Theatre</span>
+                            <span class="tech-tag">Livestreaming</span>
+                            <span class="tech-tag">Remote Production</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c3e50;">Production Process</h2>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Pre-Production Planning</h3>
+                        <p>Design meetings, technical planning, equipment assessment, and crew allocation. This phase can take 2-3 months for major productions.</p>
+                        <ul>
+                            <li>Script analysis and technical requirements</li>
+                            <li>Lighting and sound design development</li>
+                            <li>Set design and construction planning</li>
+                            <li>Crew training and skill development</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Design & Construction</h3>
+                        <p>Building sets, programming lighting sequences, setting up sound systems, and creating all technical elements needed for the production.</p>
+                        <ul>
+                            <li>Set construction and painting</li>
+                            <li>Lighting rig installation and programming</li>
+                            <li>Sound system setup and testing</li>
+                            <li>Costume and prop creation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Technical Rehearsals</h3>
+                        <p>Integration of all technical elements with the performance, fine-tuning timing, and ensuring smooth operation of all systems.</p>
+                        <ul>
+                            <li>Cue-to-cue rehearsals</li>
+                            <li>Dress rehearsals with full technical</li>
+                            <li>Problem-solving and adjustments</li>
+                            <li>Crew coordination and timing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Performance Run</h3>
+                        <p>Executing the technical elements flawlessly for each performance, maintaining equipment, and adapting to any unexpected challenges.</p>
+                        <ul>
+                            <li>Pre-show equipment checks</li>
+                            <li>Live technical operation</li>
+                            <li>Quick problem resolution</li>
+                            <li>Post-show maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Strike & Evaluation</h3>
+                        <p>Dismantling sets, storing equipment, conducting post-production evaluations, and planning improvements for future productions.</p>
+                        <ul>
+                            <li>Set dismantling and storage</li>
+                            <li>Equipment maintenance and inventory</li>
+                            <li>Production evaluation and feedback</li>
+                            <li>Skills assessment and development planning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c3e50;">Upcoming Productions</h2>
+            <div class="upcoming-productions">
+                <div class="upcoming-card major">
+                    <div class="upcoming-header">
+                        <h3>Hamilton (School Edition)</h3>
+                        <span class="upcoming-date">September 2025</span>
+                    </div>
+                    <p>Our most ambitious production ever, requiring advanced technical skills across all departments. This will be our first production to feature a full digital lighting desk and automated rigging systems.</p>
+                    <div class="upcoming-requirements">
+                        <h4>Technical Requirements:</h4>
+                        <ul>
+                            <li>Advanced lighting programming and operation</li>
+                            <li>Multi-level set construction with turntables</li>
+                            <li>Complex sound design with live orchestra</li>
+                            <li>Period costume construction and quick changes</li>
+                            <li>Video projection and mapping</li>
+                        </ul>
+                    </div>
+                    <div class="crew-needed">
+                        <span class="crew-badge">60+ Crew Members Needed</span>
+                    </div>
+                </div>
+
+                <div class="upcoming-productions-grid">
+                    <div class="upcoming-card">
+                        <h3>Winter Music Concert</h3>
+                        <span class="upcoming-date">June 2025</span>
+                        <p>Multi-genre concert featuring all school music ensembles with professional concert lighting and recording.</p>
+                    </div>
+
+                    <div class="upcoming-card">
+                        <h3>Year 12 Graduation</h3>
+                        <span class="upcoming-date">November 2025</span>
+                        <p>Formal ceremony requiring elegant staging, multi-camera coverage, and livestreaming for families.</p>
+                    </div>
+
+                    <div class="upcoming-card">
+                        <h3>Arts Festival 2026</h3>
+                        <span class="upcoming-date">March 2026</span>
+                        <p>Week-long celebration of arts featuring multiple venues and diverse technical requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ACGS Stage Crew</h3>
+                    <p>Empowering students through technical theatre and production skills.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="activities.html">Activities</a></li>
+                        <li><a href="join.html">Join Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> stagecrew@churchie.qld.edu.au</li>
+                        <li><i class="fas fa-phone"></i> (07) 3896 2200</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Oaklands Parade, East Brisbane</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anglican Church Grammar School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Production filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const productionCards = document.querySelectorAll('.production-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    productionCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeInUp 0.5s ease';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <style>
+        /* Additional styles for Productions page */
+        .production-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #3498db;
+            background: transparent;
+            color: #3498db;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #3498db;
+            color: white;
+        }
+
+        .productions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .production-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .production-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .production-card.featured {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .production-image {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .production-card.featured .production-image {
+            height: auto;
+        }
+
+        .placeholder-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .production-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #e74c3c;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .production-status.current {
+            background: #2ecc71;
+        }
+
+        .production-content {
+            padding: 2rem;
+        }
+
+        .production-content h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .production-year {
+            color: #3498db;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .production-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .production-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .production-stats .stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3498db;
+            font-size: 0.9rem;
+        }
+
+        .production-tech {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background: #f8f9fa;
+            color: #2c3e50;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .process-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 60px;
+            bottom: -30px;
+            width: 2px;
+            background: #e1e5e9;
+        }
+
+        .process-step:last-child::before {
+            display: none;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-content {
+            flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .step-content h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .step-content ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .step-content ul li {
+            padding: 0.25rem 0;
+            color: #666;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .step-content ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .upcoming-productions {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .upcoming-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .upcoming-card.major {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+        }
+
+        .upcoming-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .upcoming-header h3 {
+            color: inherit;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .upcoming-date {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .upcoming-card:not(.major) .upcoming-date {
+            background: #3498db;
+            color: white;
+        }
+
+        .upcoming-requirements {
+            margin: 2rem 0;
+        }
+
+        .upcoming-requirements h4 {
+            color: inherit;
+            margin-bottom: 1rem;
+        }
+
+        .upcoming-requirements ul {
+            list-style: none;
+        }
+
+        .upcoming-requirements ul li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .upcoming-requirements ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .crew-needed {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .crew-badge {
+            background: rgba(255,255,255,0.9);
+            color: #2c3e50;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .upcoming-productions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .production-card.featured {
+                grid-column: span 1;
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .productions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .production-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+
+            .filter-btn {
+                flex-shrink: 0;
+            }
+
+            .process-step {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .process-step::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .upcoming-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .upcoming-productions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

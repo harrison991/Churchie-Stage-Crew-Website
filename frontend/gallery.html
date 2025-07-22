@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - ACGS Stage Crew</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>ACGS Stage Crew</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="activities.html" class="nav-link">Activities</a>
+                <a href="productions.html" class="nav-link">Productions</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="join.html" class="nav-link">Join Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p>Step behind the scenes and explore the world of technical theatre through our collection of images showcasing productions, training, and the incredible work of our Stage Crew members.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="gallery-filters">
+                <button class="gallery-filter-btn active" data-filter="all">All Photos</button>
+                <button class="gallery-filter-btn" data-filter="productions">Productions</button>
+                <button class="gallery-filter-btn" data-filter="behind-scenes">Behind the Scenes</button>
+                <button class="gallery-filter-btn" data-filter="training">Training</button>
+                <button class="gallery-filter-btn" data-filter="events">Events</button>
+                <button class="gallery-filter-btn" data-filter="equipment">Equipment</button>
+            </div>
+
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Production Photos -->
+                <div class="gallery-item" data-category="productions">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-theater-masks"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Les Misérables - Opening Night</h3>
+                        <p>The spectacular opening scene with our revolutionary lighting design</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="productions">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Mamma Mia! - Beach Scene</h3>
+                        <p>Vibrant beach-themed set design with LED backdrop</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="productions">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>The Lion King Jr. - Pride Rock</h3>
+                        <p>Iconic Pride Rock set with custom-built elevated platforms</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="productions">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Romeo and Juliet - Balcony Scene</h3>
+                        <p>Intimate lighting design highlighting the romantic balcony</p>
+                    </div>
+                </div>
+
+                <!-- Behind the Scenes -->
+                <div class="gallery-item" data-category="behind-scenes">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Set Construction in Progress</h3>
+                        <p>Students working on building the Hamilton set pieces</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="behind-scenes">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Scenic Painting Workshop</h3>
+                        <p>Creating detailed backdrops with traditional painting techniques</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="behind-scenes">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Lighting Rig Installation</h3>
+                        <p>Crew members rigging LED lights for the spring concert</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="behind-scenes">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Sound Check</h3>
+                        <p>Sound engineers testing wireless microphone systems</p>
+                    </div>
+                </div>
+
+                <!-- Training Photos -->
+                <div class="gallery-item" data-category="training">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Lighting Console Training</h3>
+                        <p>New members learning to program the digital lighting desk</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="training">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Sound Mixing Workshop</h3>
+                        <p>Hands-on training with professional mixing consoles</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="training">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Safety Training Session</h3>
+                        <p>Essential safety protocols for working with stage equipment</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="training">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Camera Operation Class</h3>
+                        <p>Learning multi-camera production techniques</p>
+                    </div>
+                </div>
+
+                <!-- Events -->
+                <div class="gallery-item" data-category="events">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Tech Olympics 2024</h3>
+                        <p>Annual competition celebrating technical excellence</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Speech Night Setup</h3>
+                        <p>Elegant staging for the annual graduation ceremony</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Industry Guest Speaker</h3>
+                        <p>Professional lighting designer sharing expertise with students</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Awards Ceremony</h3>
+                        <p>Recognition for outstanding technical achievement</p>
+                    </div>
+                </div>
+
+                <!-- Equipment -->
+                <div class="gallery-item" data-category="equipment">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>New Lighting Console</h3>
+                        <p>State-of-the-art digital lighting control system</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="equipment">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Professional Camera Setup</h3>
+                        <p>Multi-camera rig for live streaming and recording</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="equipment">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Moving Light Array</h3>
+                        <p>Advanced LED moving lights for dynamic stage effects</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="equipment">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Workshop Equipment</h3>
+                        <p>Professional-grade tools for set construction</p>
+                    </div>
+                </div>
+
+                <!-- More Production Photos -->
+                <div class="gallery-item" data-category="productions">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Grease - Greased Lightning</h3>
+                        <p>Custom-built car prop with working lights and effects</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="productions">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Christmas Concert - Winter Wonderland</h3>
+                        <p>Magical snow effects and twinkling light display</p>
+                    </div>
+                </div>
+
+                <!-- More Behind the Scenes -->
+                <div class="gallery-item" data-category="behind-scenes">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Team Planning Session</h3>
+                        <p>Crew leaders coordinating technical requirements</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="behind-scenes">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Late Night Setup</h3>
+                        <p>Dedicated crew working through the night before opening</p>
+                    </div>
+                </div>
+
+                <!-- Student Spotlights -->
+                <div class="gallery-item" data-category="training">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Student Achievement</h3>
+                        <p>Recognizing excellence in technical theatre skills</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <div class="placeholder-gallery-image">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Stage Crew Anniversary</h3>
+                        <p>Celebrating 8 years of technical excellence</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="load-more-container">
+                <button id="load-more-btn" class="btn btn-primary">Load More Photos</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c3e50;">Video Highlights</h2>
+            <div class="video-gallery">
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <i class="fas fa-play-circle"></i>
+                        <div class="video-overlay">
+                            <h3>Les Misérables - Technical Highlight Reel</h3>
+                            <p>Behind-the-scenes look at our most ambitious production</p>
+                            <span class="video-duration">3:42</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <i class="fas fa-play-circle"></i>
+                        <div class="video-overlay">
+                            <h3>Stage Crew Training Montage</h3>
+                            <p>Students learning the ropes in our comprehensive program</p>
+                            <span class="video-duration">2:15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <i class="fas fa-play-circle"></i>
+                        <div class="video-overlay">
+                            <h3>Time-lapse: Set Construction</h3>
+                            <p>Building the Hamilton set from start to finish</p>
+                            <span class="video-duration">1:30</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <i class="fas fa-play-circle"></i>
+                        <div class="video-overlay">
+                            <h3>Student Testimonials</h3>
+                            <p>Hear from current and former Stage Crew members</p>
+                            <span class="video-duration">4:18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #2c3e50;">Share Your Photos</h2>
+            <div class="photo-submission">
+                <div class="submission-content">
+                    <div class="submission-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Contribute to Our Gallery</h3>
+                    <p>Have photos from Stage Crew activities or productions? We'd love to feature them in our gallery! Share your perspective and help showcase the amazing work of our technical theatre program.</p>
+                    <div class="submission-guidelines">
+                        <h4>Submission Guidelines:</h4>
+                        <ul>
+                            <li>High-resolution images (minimum 1920x1080)</li>
+                            <li>Photos must be taken during official Stage Crew activities</li>
+                            <li>Include a brief description and date</li>
+                            <li>Ensure all individuals in photos have given permission</li>
+                            <li>Original photos only - no heavy editing or filters</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">Submit Your Photos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ACGS Stage Crew</h3>
+                    <p>Empowering students through technical theatre and production skills.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="activities.html">Activities</a></li>
+                        <li><a href="join.html">Join Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> stagecrew@churchie.qld.edu.au</li>
+                        <li><i class="fas fa-phone"></i> (07) 3896 2200</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Oaklands Parade, East Brisbane</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anglican Church Grammar School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Gallery filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const loadMoreBtn = document.getElementById('load-more-btn');
+
+            let visibleItems = 12;
+            const itemsPerLoad = 8;
+
+            function showItems() {
+                const currentFilter = document.querySelector('.gallery-filter-btn.active').getAttribute('data-filter');
+                let itemCount = 0;
+                
+                galleryItems.forEach((item, index) => {
+                    const category = item.getAttribute('data-category');
+                    const shouldShow = currentFilter === 'all' || category === currentFilter;
+                    
+                    if (shouldShow && itemCount < visibleItems) {
+                        item.style.display = 'block';
+                        itemCount++;
+                    } else if (shouldShow) {
+                        item.style.display = 'none';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                // Check if there are more items to show
+                const totalFilteredItems = Array.from(galleryItems).filter(item => {
+                    const category = item.getAttribute('data-category');
+                    return currentFilter === 'all' || category === currentFilter;
+                }).length;
+
+                if (visibleItems >= totalFilteredItems) {
+                    loadMoreBtn.style.display = 'none';
+                } else {
+                    loadMoreBtn.style.display = 'block';
+                }
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    // Reset visible items count
+                    visibleItems = 12;
+                    showItems();
+                });
+            });
+
+            loadMoreBtn.addEventListener('click', () => {
+                visibleItems += itemsPerLoad;
+                showItems();
+            });
+
+            // Initialize gallery
+            showItems();
+        });
+
+        // Video player functionality (placeholder)
+        document.querySelectorAll('.video-item').forEach(item => {
+            item.addEventListener('click', () => {
+                // In a real implementation, this would open a video player
+                alert('Video player would open here. In a real implementation, this would play the video.');
+            });
+        });
+    </script>
+
+    <style>
+        /* Additional styles for Gallery page */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .gallery-filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #3498db;
+            background: transparent;
+            color: #3498db;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-filter-btn.active,
+        .gallery-filter-btn:hover {
+            background: #3498db;
+            color: white;
+        }
+
+        .placeholder-gallery-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .placeholder-gallery-image {
+            transform: scale(1.1);
+        }
+
+        .load-more-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .video-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+        }
+
+        .video-overlay h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .video-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-duration {
+            background: rgba(0,0,0,0.7);
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .photo-submission {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .submission-content {
+            text-align: center;
+        }
+
+        .submission-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .submission-content h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .submission-content > p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .submission-guidelines {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .submission-guidelines h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .submission-guidelines ul {
+            list-style: none;
+        }
+
+        .submission-guidelines ul li {
+            padding: 0.5rem 0;
+            color: #666;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .submission-guidelines ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .gallery-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+
+            .gallery-filter-btn {
+                flex-shrink: 0;
+            }
+
+            .video-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-submission {
+                padding: 2rem 1.5rem;
+            }
+
+            .submission-content h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</body>
+</html>
