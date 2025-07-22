@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=True
+    env_file:
+      - .env
+    volumes:
+      # Mount source code for development (comment out for production)
+      - ./backend:/app/backend
+      - ./frontend:/app/frontend
+    depends_on:
+      - mongo
+    
+  mongo:
+    image: mongo:7.0
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=stagecrew
+    volumes:
+      - mongo_data:/data/db
+    
+volumes:
+  mongo_data:

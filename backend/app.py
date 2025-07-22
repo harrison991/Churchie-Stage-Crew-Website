@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory, render_template_string
 from flask_cors import CORS
 import firebase_admin
 from firebase_admin import credentials, auth
@@ -14,7 +14,12 @@ import json
 # Load environment variables
 load_dotenv()
 
-app = Flask(__name__)
+# Get the directory where the script is located
+backend_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(backend_dir)
+frontend_dir = os.path.join(project_root, 'frontend')
+
+app = Flask(__name__, static_folder=frontend_dir, static_url_path='')
 CORS(app, origins=os.getenv('CORS_ORIGINS', '').split(','))
 
 # Configuration
@@ -542,6 +547,52 @@ def get_contacts():
         'page': page,
         'pages': (total + limit - 1) // limit
     })
+
+# Frontend Routes - Serve HTML pages
+@app.route('/')
+def index():
+    return send_from_directory(app.static_folder, 'index.html')
+
+@app.route('/about')
+@app.route('/about.html')
+def about():
+    return send_from_directory(app.static_folder, 'about.html')
+
+@app.route('/activities')
+@app.route('/activities.html')
+def activities():
+    return send_from_directory(app.static_folder, 'activities.html')
+
+@app.route('/contact')
+@app.route('/contact.html')
+def contact():
+    return send_from_directory(app.static_folder, 'contact.html')
+
+@app.route('/gallery')
+@app.route('/gallery.html')
+def gallery():
+    return send_from_directory(app.static_folder, 'gallery.html')
+
+@app.route('/join')
+@app.route('/join.html')
+def join():
+    return send_from_directory(app.static_folder, 'join.html')
+
+@app.route('/productions')
+@app.route('/productions.html')
+def productions():
+    return send_from_directory(app.static_folder, 'productions.html')
+
+@app.route('/admin')
+@app.route('/admin-dashboard')
+@app.route('/admin-dashboard.html')
+def admin_dashboard():
+    return send_from_directory(app.static_folder, 'admin-dashboard.html')
+
+# Serve static assets (CSS, JS, images)
+@app.route('/<path:filename>')
+def static_files(filename):
+    return send_from_directory(app.static_folder, filename)
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
