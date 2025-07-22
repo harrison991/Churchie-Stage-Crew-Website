@@ -411,9 +411,8 @@ def get_application(application_id):
 
 @app.route('/api/applications/<application_id>/status', methods=['PUT'])
 @require_auth
-def update_application_status():
+def update_application_status(application_id):
     data = request.get_json()
-    application_id = request.view_args['application_id']
     new_status = data.get('status')
     notes = data.get('notes', '')
     
